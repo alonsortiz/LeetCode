@@ -5,7 +5,7 @@
  * Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. 
  * That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
  *
- * Return the answer in an array.
+ * Return the answer in an array. 
  */
 
 import java.io.*;
@@ -21,19 +21,19 @@ public class SmallerNumbers {
 
 		Map<Integer, Integer> numsMap = new HashMap<Integer, Integer>(); 
 		int[] smaller = new int[nums.length];
-		int[] sortedNums = new int[nums.length];
+		int[] sortedNums = new int[nums.length]; 
 
 		sortedNums = Arrays.copyOf(nums, nums.length);
 		Arrays.sort(sortedNums);
 
 		for(int i = 0; i < sortedNums.length; i++) { 
-	   	    if(!numsMap.containsKey(sortedNums[i])) {
-			numsMap.put(sortedNums[i], i);
-		    }
+			if(!numsMap.containsKey(sortedNums[i])) {
+				numsMap.put(sortedNums[i], i);
+			}
 		}
 
 		for(int i = 0; i < nums.length; i++) { 
-		    smaller[i] = numsMap.get(nums[i]);
+			smaller[i] = numsMap.get(nums[i]);
 		}
 
 		return smaller;
