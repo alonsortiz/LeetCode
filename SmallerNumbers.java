@@ -27,13 +27,13 @@ public class SmallerNumbers {
 		Arrays.sort(sortedNums);
 
 		for(int i = 0; i < sortedNums.length; i++) { 
-			if(!numsMap.containsKey(sortedNums[i])) {
-				numsMap.put(sortedNums[i], i);
-			}
+	   	    if(!numsMap.containsKey(sortedNums[i])) {
+			numsMap.put(sortedNums[i], i);
+		    }
 		}
 
 		for(int i = 0; i < nums.length; i++) { 
-			smaller[i] = numsMap.get(nums[i]);
+		    smaller[i] = numsMap.get(nums[i]);
 		}
 
 		return smaller;
