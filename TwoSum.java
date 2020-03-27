@@ -16,7 +16,7 @@ import java.util.stream.*;
 
 public class TwoSum {
 
-	public static int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
 
 		int[] sum = new int[2];
 		int diff = 0;
