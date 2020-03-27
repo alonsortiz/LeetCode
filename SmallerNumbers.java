@@ -17,26 +17,26 @@ import java.util.stream.*;
 
 public class SmallerNumbers {
 
-	public static int[] smallerNumbersThanCurrent(int[] nums) {
+    public static int[] smallerNumbersThanCurrent(int[] nums) {
 
-		Map<Integer, Integer> numsMap = new HashMap<Integer, Integer>(); 
-		int[] smaller = new int[nums.length];
-		int[] sortedNums = new int[nums.length]; 
+	Map<Integer, Integer> numsMap = new HashMap<Integer, Integer>(); 
+	int[] smaller = new int[nums.length];
+	int[] sortedNums = new int[nums.length]; 
 
-		sortedNums = Arrays.copyOf(nums, nums.length);
-		Arrays.sort(sortedNums);
+	sortedNums = Arrays.copyOf(nums, nums.length);
+	Arrays.sort(sortedNums);
 
-		for(int i = 0; i < sortedNums.length; i++) { 
-			if(!numsMap.containsKey(sortedNums[i])) {
-				numsMap.put(sortedNums[i], i);
-			}
-		}
-
-		for(int i = 0; i < nums.length; i++) { 
-			smaller[i] = numsMap.get(nums[i]);
-		}
-
-		return smaller;
-
+	for(int i = 0; i < sortedNums.length; i++) { 
+	    if(!numsMap.containsKey(sortedNums[i])) {
+		numsMap.put(sortedNums[i], i);
+	    }
 	}
+
+	for(int i = 0; i < nums.length; i++) { 
+	    smaller[i] = numsMap.get(nums[i]);
+	}
+
+	return smaller;
+
+    }
 }
